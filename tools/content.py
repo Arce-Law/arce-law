@@ -10,7 +10,7 @@ Anything wrapped in ph("...") renders as a highlighted [CONFIRM WITH CLIENT: ...
 # ---------------------------------------------------------------- settings
 SITE_URL = "https://www.arce-law.com"          # no trailing slash
 FIRM = "Arce Law"
-EMAIL = "info@arce-law.com"
+EMAIL = "arcelaw.mx.us@gmail.com"   # switch to a domain address (e.g. info@arce-law.com) once it exists
 PHONE_US_TEL = "+12062009513"
 PHONE_US_DISPLAY = "(206) 200-9513"
 PHONE_MX_TEL = "+523334084797"
@@ -39,6 +39,7 @@ SLUGS = {
     "immigration": {"en": "us-immigration",               "es": "inmigracion-estados-unidos"},
     "llc":         {"en": "washington-llc-formation",     "es": "constitucion-llc-washington"},
     "about":       {"en": "about",                        "es": "nosotros"},
+    "history":     {"en": "history",                      "es": "historia"},
     "team":        {"en": "team",                         "es": "equipo"},
     "contact":     {"en": "contact",                      "es": "contacto"},
 }
@@ -94,6 +95,12 @@ SEO = {
         "es": ("Nosotros | Arce Law, Asesoría Legal Bilingüe México–EE. UU.",
                "Conozca Arce Law, un despacho bilingüe que ayuda a familias y empresas con asuntos legales en México y Estados Unidos."),
     },
+    "history": {
+        "en": ("Our History | Arce Law, Bridging Mexico and the USA Since 2009",
+               "Founded in 2009 by attorneys Gilberto Alonso Arce and Alejandra Gomez Arce, ARCE Law helps people and businesses with legal matters in Mexico and the U.S."),
+        "es": ("Nuestra Historia | Arce Law, Puente Legal México–EE. UU.",
+               "Fundado en 2009 por los abogados Gilberto Alonso Arce y Alejandra Gomez Arce, ARCE Law ayuda a personas y empresas con asuntos legales en México y EE. UU."),
+    },
     "team": {
         "en": ("Meet Our Team | Arce Law",
                "Meet the bilingual team at Arce Law who handle legal matters in Mexico (Jalisco, Michoacán, Colima) and the U.S. (Washington, Arizona)."),
@@ -114,7 +121,7 @@ UI = {
         "locale": "en_US", "other": "es", "other_label": "Español", "other_short": "ES",
         "switch_aria": "Ver esta página en español",
         "skip": "Skip to main content",
-        "menu": "Menu", "services": "Services", "about": "About", "team": "Team", "contact": "Contact",
+        "menu": "Menu", "services": "Services", "about": "About", "history": "History", "team": "Team", "contact": "Contact",
         "home": "Home",
         "cta": "Free Consultation",
         "call_us": "Call U.S.", "call_mx": "Call Mexico",
@@ -149,7 +156,7 @@ UI = {
         "locale": "es_MX", "other": "en", "other_label": "English", "other_short": "EN",
         "switch_aria": "View this page in English",
         "skip": "Saltar al contenido principal",
-        "menu": "Menú", "services": "Servicios", "about": "Nosotros", "team": "Equipo", "contact": "Contacto",
+        "menu": "Menú", "services": "Servicios", "about": "Nosotros", "history": "Historia", "team": "Equipo", "contact": "Contacto",
         "home": "Inicio",
         "cta": "Consulta gratuita",
         "call_us": "Llamar a EE. UU.", "call_mx": "Llamar a México",
@@ -720,3 +727,34 @@ TEAM_MEMBERS = [
                "languages": "Español, inglés"},
     },
 ]
+
+
+# ---------------------------------------------------------------- history (client's own text, Nov 2026)
+HISTORY = {
+    "en": {
+        "eyebrow": "Our history",
+        "h1": "Bridging Mexico and the USA since 2009",
+        "paras": [
+            "ARCE Law is a firm that bridges the gap between Mexico and the USA. Whether you are a Mexican citizen living in the Pacific Northwest with legal issues back home, or an American investor or business owner looking for opportunities in Mexico, we are here to help you.",
+            "We are Attorneys Gilberto Alonso Arce and Alejandra Gomez Arce, the founders of ARCE Law. We have more than 20 years of legal experience in both international and domestic matters. We started our firm in 2009 with a vision of providing high-quality, professional and ethical legal services to individuals and companies who face legal challenges in Mexico.",
+            "We have offices and partnerships throughout Mexico, which allows us to handle any type of legal issue for you, from the simplest (obtaining a birth certificate) to the most complex (criminal). We can also represent you or your company in the USA if you are interested in investing or doing business in Mexico.",
+            "At ARCE Law, we are more than just lawyers. We are your partners, your advocates, and your friends. Contact us today and let us help you solve your legal matters.",
+        ],
+        "founders_h": "The founders",
+        "team_link": "Meet the team",
+        "read_more": "Read our full history",
+    },
+    "es": {
+        "eyebrow": "Nuestra historia",
+        "h1": "Un puente entre México y Estados Unidos desde 2009",
+        "paras": [
+            "ARCE Law es un despacho que tiende un puente entre México y Estados Unidos. Ya sea que usted sea un ciudadano mexicano que vive en el noroeste del Pacífico y tiene asuntos legales pendientes en México, o un inversionista o empresario estadounidense que busca oportunidades en México, estamos aquí para ayudarle.",
+            "Somos los abogados Gilberto Alonso Arce y Alejandra Gomez Arce, fundadores de ARCE Law. Contamos con más de 20 años de experiencia legal en asuntos tanto internacionales como nacionales. Fundamos el despacho en 2009 con la visión de brindar servicios legales de alta calidad, profesionales y éticos a personas y empresas que enfrentan retos legales en México.",
+            "Contamos con oficinas y alianzas en todo México, lo que nos permite atender por usted cualquier tipo de asunto legal, desde lo más sencillo (como obtener un acta de nacimiento) hasta lo más complejo (asuntos penales). También podemos representarle a usted o a su empresa en Estados Unidos si le interesa invertir o hacer negocios en México.",
+            "En ARCE Law somos más que abogados: somos sus aliados, sus defensores y sus amigos. Contáctenos hoy y permítanos ayudarle a resolver sus asuntos legales.",
+        ],
+        "founders_h": "Los fundadores",
+        "team_link": "Conozca al equipo",
+        "read_more": "Lea nuestra historia completa",
+    },
+}

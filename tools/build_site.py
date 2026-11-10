@@ -215,6 +215,7 @@ def header(key, lang):
           </ul>
         </li>
         <li><a href="{r(path_of('about', lang))}"{cur('about')}>{t['about']}</a></li>
+        <li><a href="{r(path_of('history', lang))}"{cur('history')}>{t['history']}</a></li>
         <li><a href="{r(path_of('team', lang))}"{cur('team')}>{t['team']}</a></li>
         <li><a href="{r(path_of('contact', lang))}"{cur('contact')}>{t['contact']}</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="{r(path_of('contact', lang))}">{t['cta']}</a></li>
@@ -261,6 +262,7 @@ def footer(key, lang):
         <h2>{t['footer_firm']}</h2>
         <ul>
           <li><a href="{r(path_of('about', lang))}">{t['about']}</a></li>
+          <li><a href="{r(path_of('history', lang))}">{t['history']}</a></li>
           <li><a href="{r(path_of('team', lang))}">{t['team']}</a></li>
           <li><a href="{r(path_of('contact', lang))}">{t['contact']}</a></li>
           <!-- <li><a href="PRIVACY-NOTICE-URL">Privacy notice / Aviso de privacidad</a></li>  See PLACEHOLDERS.md -->
@@ -576,10 +578,7 @@ ABOUT = {
         "eyebrow": "About us", "h1": "Legal help that bridges Mexico and the United States",
         "lead": "Arce Law helps individuals, families and businesses with legal matters in Mexico and the U.S., in English or Spanish, wherever they live.",
         "story_h": "Our story",
-        "story": [
-            ph("firm history: who founded Arce Law, when, where, and why. Two or three short paragraphs in the client's own words."),
-            ph("how the practice grew to serve clients in both Mexico and the U.S., and where the offices are located."),
-        ],
+        "story": HISTORY["en"]["paras"][:2],
         "img_alt": "Placeholder: the Arce Law office or the founding attorney",
         "values_h": "How we work",
         "values": [
@@ -599,10 +598,7 @@ ABOUT = {
         "eyebrow": "Nosotros", "h1": "Asesoría legal que une a México y Estados Unidos",
         "lead": "Arce Law ayuda a personas, familias y empresas con asuntos legales en México y Estados Unidos, en español o en inglés, vivan donde vivan.",
         "story_h": "Nuestra historia",
-        "story": [
-            ph("historia del despacho: quién fundó Arce Law, cuándo, dónde y por qué. Dos o tres párrafos breves con las palabras del cliente."),
-            ph("cómo creció el despacho para atender clientes en México y EE. UU., y dónde se ubican las oficinas."),
-        ],
+        "story": HISTORY["es"]["paras"][:2],
         "img_alt": "Imagen provisional: la oficina de Arce Law o el abogado fundador",
         "values_h": "Cómo trabajamos",
         "values": [
@@ -642,7 +638,7 @@ def page_about(lang):
     <div class="prose reveal">
       <h2 id="story-title">{a['story_h']}</h2>
 {story}
-      <p><a href="{rel(key, path_of('team', lang))}">{a['team_link']} →</a></p>
+      <p><a href="{rel(key, path_of('history', lang))}">{HISTORY[lang]['read_more']} →</a><br><a href="{rel(key, path_of('team', lang))}">{a['team_link']} →</a></p>
     </div>
     <div class="about-media reveal">
       <img src="{rel(key, '/assets/img/about-office-or-founder-1200x800-PLACEHOLDER.jpg')}" alt="{a['img_alt']}" width="1200" height="800" loading="lazy">
@@ -1005,12 +1001,37 @@ def sitemap():
     write("/robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
 
 
+def page_history(lang):
+    key = "history"
+    h = HISTORY[lang]
+    paras = "\n".join(f"      <p>{x}</p>" for x in h["paras"])
+    body = f"""<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    {breadcrumb(key, lang, UI[lang]['history'])}
+    <span class="eyebrow">{h['eyebrow']}</span>
+    <h1>{h['h1']}</h1>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap narrow prose history-text reveal">
+{paras}
+      <p><a href="{rel(key, path_of('team', lang))}">{h['team_link']} →</a></p>
+  </div>
+</section>
+{cta_band(key, lang)}
+</main>
+"""
+    write(path_of(key, lang), head(key, lang) + header(key, lang) + body + footer(key, lang))
+
+
 def main():
     for lang in ("en", "es"):
         page_home(lang)
         for k in PRACTICE_KEYS:
             page_practice(k, lang)
         page_about(lang)
+        page_history(lang)
         page_team(lang)
         page_contact(lang)
     page_root()

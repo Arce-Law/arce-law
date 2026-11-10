@@ -10,13 +10,13 @@ Edit values in `tools/content.py` (settings at the top) or `tools/build_site.py`
 |---|---|---|
 | WhatsApp number | `15555550123` (fake) | Real number, digits only, with country code (e.g. `5213334084797` or `12062009513`) |
 | Formspree form ID | `YOUR_FORM_ID` | Create a form at formspree.io, set the notification email, paste the ID. The form shows a "not connected" message until you do |
-| Email | `info@arce-law.com` | Confirm once the domain mailbox exists (it currently goes nowhere) |
+| Email | `arcelaw.mx.us@gmail.com` (current Gmail) | Change `EMAIL` to the domain address (e.g. `info@arce-law.com`) once that mailbox exists |
 | Time zone for hours | shown as a placeholder (header, footer, contact) | Replace the `TZ = ph("time zone")` line, e.g. `TZ = "(Pacific Time)"` / `"(hora del Centro de México)"` |
 | Site URL | `https://www.arce-law.com` | Confirm www vs. apex domain (must match the custom domain set in Settings → Pages at launch) |
 
 ## Content and credentials (do not publish unverified)
 - **Home, credentials strip:** bar admissions and licenses (Mexican cédula profesional, U.S. state bar), memberships, years in practice
-- **About:** firm history, founder story, office locations
+- **History:** the client's own text is on `/en/history/` and `/es/historia/` (Spanish translated by me; have the client skim it)
 - **About, "Where we help":** exactly which matters are handled in which jurisdiction, and by whom
 - **Team** (`TEAM_MEMBERS` in `tools/content.py`). Names, roles and the two founders' bios come from the old site.
   - **Gilberto Arce:** WSBA license **type and number**. His old bio calls him a "Foreign Law Consultant" and also says he was "admitted to the Washington Bar". In Washington, a Foreign Law Consultant (APR 14) is a limited license to advise on the law of the foreign country (Mexico), **not** U.S. law. Check the WSBA lawyer directory. If he holds that limited license, the U.S. Immigration and Washington LLC pages need rethinking. Photo cropped from the old site; a proper headshot would be better.

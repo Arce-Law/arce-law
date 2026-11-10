@@ -129,6 +129,22 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arce-law.com/en/about/"/>
   </url>
   <url>
+    <loc>https://www.arce-law.com/en/history/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arce-law.com/en/history/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.arce-law.com/es/historia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arce-law.com/en/history/"/>
+  </url>
+  <url>
+    <loc>https://www.arce-law.com/es/historia/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arce-law.com/en/history/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.arce-law.com/es/historia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arce-law.com/en/history/"/>
+  </url>
+  <url>
     <loc>https://www.arce-law.com/en/team/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.6</priority>

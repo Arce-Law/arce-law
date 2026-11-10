@@ -523,3 +523,6 @@ legend { padding: 0; }
 @media (min-width: 1000px) { .team-grid { grid-template-columns: repeat(2, 1fr); } .member { flex-direction: row; } .member img { width: 40%; flex: none; align-self: flex-start; aspect-ratio: 4 / 5; height: auto; } }
 .team-grid { align-items: start; }
 @media (min-width: 1024px) { .brand img { height: 54px; } }
+/* History page */
+.history-text p { font-size: 1.12rem; line-height: 1.75; }
+.history-text p:first-child { font-family: var(--font-serif); font-size: clamp(1.3rem, 3.2vw, 1.6rem); line-height: 1.45; color: var(--ink); }
