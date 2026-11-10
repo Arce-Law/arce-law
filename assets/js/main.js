@@ -70,14 +70,14 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* Home hero slideshow: crossfade, pause button, dots; pauses on hover/focus; no autoplay with reduced motion */
+  /* Home hero slideshow: crossfade every 6s, pause button, dots; pauses only while a keyboard user is on its controls */
   var show = document.querySelector(".hero-slides");
   if (show) {
     var slides = show.querySelectorAll(".slide");
     var dots = show.querySelectorAll(".slide-dot");
     var toggle = show.querySelector(".slide-toggle");
     var cur = 0, timer = null, hover = false;
-    var userPaused = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var userPaused = false;
     function go(n) {
       slides[cur].classList.remove("is-active"); slides[cur].setAttribute("aria-hidden", "true");
       dots[cur].removeAttribute("aria-current");
@@ -93,10 +93,12 @@
     }
     toggle.addEventListener("click", function () { userPaused = !userPaused; sync(); });
     dots.forEach(function (d, i) { d.addEventListener("click", function () { go(i); sync(); }); });
-    show.addEventListener("mouseenter", function () { hover = true; sync(); });
-    show.addEventListener("mouseleave", function () { hover = false; sync(); });
-    show.addEventListener("focusin", function () { hover = true; sync(); });
-    show.addEventListener("focusout", function () { hover = false; sync(); });
+    show.addEventListener("focusin", function (e) {
+      var kb = true;
+      try { kb = e.target.matches(":focus-visible"); } catch (err) {}
+      if (kb) { hover = true; sync(); }
+    });
+    show.addEventListener("focusout", function () { if (hover) { hover = false; sync(); } });
     if (slides.length > 1) sync();
   }
 

@@ -543,4 +543,3 @@ legend { padding: 0; }
 .slide-dot::before { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid #fff; transition: background .2s; }
 .slide-dot[aria-current="true"]::before { background: #fff; }
 .slide-toggle:focus-visible, .slide-dot:focus-visible { outline: 3px solid #fff; outline-offset: -3px; }
-@media (prefers-reduced-motion: reduce) { .hero-slides .slide { transition: none; } }
