@@ -32,9 +32,10 @@ Edit values in `tools/content.py` (settings at the top) or `tools/build_site.py`
 ## Images (`assets/img/`, replace with the same filename or update the references)
 | File | Use | Size |
 |---|---|---|
-| `home-hero-client-consultation-1200x900-PLACEHOLDER.jpg` | Home hero | 1200×900 (4:3) |
 | `about-office-or-founder-1200x800-PLACEHOLDER.jpg` | About page | 1200×800 (3:2) |
 | `team-{alejandra-gomez-arce,ivan-bono,fernanda-zavala}-800x1000-PLACEHOLDER.jpg` | Team headshots (then set `photo` in `TEAM_MEMBERS`) | 800×1000 (4:5) |
+
+The home hero (`home-hero-papel-picado-1200x900.jpg`) is your photo. **Confirm you have the right to use it** (stock license or original photographer).
 
 Compress photos before uploading (e.g. squoosh.app, quality ~70, under ~150 KB each). If you rename a file, also update its alt text in `tools/build_site.py`.
 

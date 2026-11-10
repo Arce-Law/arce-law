@@ -347,7 +347,7 @@ HOME = {
         "h1": "Legal help in Mexico and the U.S., <em>in your language</em>",
         "lead": "Do you live in the U.S. but have a property, a family matter or paperwork in Mexico? We take care of it for you, often without you needing to travel. We also help with U.S. immigration and Washington business formation.",
         "call": "Call now",
-        "img_alt": "Placeholder: a client reviewing documents with a member of the Arce Law team",
+        "img_alt": "Colorful papel picado banners strung between the towers of a historic stone church in Mexico",
         "mx": "Mexico:", "us": "U.S.:",
         "svc_eyebrow": "Practice areas", "svc_h": "How we can help",
         "svc_p": "Matters in two countries, handled by one bilingual team.",
@@ -373,7 +373,7 @@ HOME = {
         "h1": "Asesoría legal en México y Estados Unidos, <em>en su idioma</em>",
         "lead": "¿Vive en Estados Unidos y tiene una propiedad, un asunto familiar o un trámite pendiente en México? Nosotros nos encargamos, muchas veces sin que usted tenga que viajar. También le ayudamos con inmigración en EE. UU. y con la apertura de empresas en Washington.",
         "call": "Llamar ahora",
-        "img_alt": "Imagen provisional: un cliente revisa documentos con un integrante del equipo de Arce Law",
+        "img_alt": "Papel picado de colores colgado entre las torres de una iglesia histórica de cantera en México",
         "mx": "México:", "us": "EE. UU.:",
         "svc_eyebrow": "Áreas de práctica", "svc_h": "¿En qué le podemos ayudar?",
         "svc_p": "Asuntos en dos países, atendidos por un mismo equipo bilingüe.",
@@ -423,7 +423,7 @@ def page_home(lang):
       </div>
     </div>
     <div class="hero-media">
-      <img src="{rel(key, '/assets/img/home-hero-client-consultation-1200x900-PLACEHOLDER.jpg')}" alt="{h['img_alt']}" width="1200" height="900" fetchpriority="high">
+      <img src="{rel(key, '/assets/img/home-hero-papel-picado-1200x900.jpg')}" alt="{h['img_alt']}" width="1200" height="900" fetchpriority="high">
     </div>
   </div>
 </section>
