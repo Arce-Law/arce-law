@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arce Law | Legal Help in Mexico &amp; the U.S. / Asesoría Legal en México y EE. UU.</title>
+<meta name="description" content="Bilingual legal help for matters in Mexico (Jalisco, Michoacán, Colima) and the U.S. (Washington, Arizona): property, divorce, powers of attorney, immigration. Free consultation.">
+<link rel="canonical" href="https://www.arce-law.com/">
+<link rel="alternate" hreflang="en" href="https://www.arce-law.com/en/">
+<link rel="alternate" hreflang="es" href="https://www.arce-law.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://www.arce-law.com/">
+<meta property="og:title" content="Arce Law">
+<meta property="og:description" content="Bilingual legal help for matters in Mexico (Jalisco, Michoacán, Colima) and the U.S. (Washington, Arizona): property, divorce, powers of attorney, immigration. Free consultation.">
+<meta property="og:url" content="https://www.arce-law.com/">
+<meta property="og:image" content="https://www.arce-law.com/assets/img/og-share-image-1200x630-PLACEHOLDER.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  /* Send visitors to their language: saved choice first, then browser language. */
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("arce-lang"); } catch (e) {}
+    if (l !== "en" && l !== "es") {
+      var langs = navigator.languages || [navigator.language || "en"];
+      l = String(langs[0] || "en").toLowerCase().indexOf("es") === 0 ? "es" : "en";
+    }
+    location.replace(l + "/");
+  })();
+</script>
+</head>
+<body>
+<main class="chooser">
+  <div>
+    <img src="assets/logo.jpg" alt="Arce Law" height="64">
+    <h1 style="font-size:1.6rem">Choose your language · Elija su idioma</h1>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="es/" hreflang="es" lang="es">Español</a>
+      <a class="btn btn-outline" href="en/" hreflang="en" lang="en">English</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
