@@ -586,10 +586,11 @@ ABOUT = {
             ("Responsiveness", "We keep you updated and answer your questions by phone, WhatsApp, video call or email."),
             ("Honesty", "We tell you what's realistic, including when a case isn't worth pursuing."),
         ],
-        "where_h": "Where we help",
+        "where_h": "Locations, hours & contact",
+        "hours_h": "Hours", "contact_h": "Contact",
         "mx_h": "Mexico", "us_h": "United States",
         "mx_list": ["Jalisco", "Michoacán", "Colima"],
-        "us_list": ["Washington State", "Arizona", "U.S. immigration matters (federal)"],
+        "us_list": ["Washington State", "Arizona"],
         "where_note": ph("confirm exactly which matters are handled in each jurisdiction and by whom (licensed attorney, notary, or partner firm)."),
         "team_link": "Meet the team",
     },
@@ -608,10 +609,11 @@ ABOUT = {
             ("Atención oportuna", "Le mantenemos informado y respondemos sus dudas por teléfono, WhatsApp, videollamada o correo."),
             ("Honestidad", "Le decimos lo que es realista, incluso cuando un asunto no conviene."),
         ],
-        "where_h": "Dónde le ayudamos",
+        "where_h": "Ubicación, horario y contacto",
+        "hours_h": "Horario", "contact_h": "Contacto",
         "mx_h": "México", "us_h": "Estados Unidos",
         "mx_list": ["Jalisco", "Michoacán", "Colima"],
-        "us_list": ["Estado de Washington", "Arizona", "Asuntos migratorios en EE. UU. (federales)"],
+        "us_list": ["Estado de Washington", "Arizona"],
         "where_note": ph("confirmar exactamente qué asuntos se atienden en cada jurisdicción y por quién (abogado con licencia, notario o despacho aliado)."),
         "team_link": "Conozca al equipo",
     },
@@ -659,9 +661,16 @@ def page_about(lang):
 <section class="section" aria-labelledby="where-title">
   <div class="wrap">
     <div class="section-head"><h2 id="where-title">{a['where_h']}</h2></div>
-    <div class="juris-table">
+    <div class="juris-table juris-4">
       <div class="juris-box reveal"><h3>{a['mx_h']}</h3><ul>{li(a['mx_list'])}</ul></div>
       <div class="juris-box us reveal"><h3>{a['us_h']}</h3><ul>{li(a['us_list'])}</ul></div>
+      <div class="juris-box plain reveal"><h3>{a['hours_h']}</h3>
+        <p>{UI[lang]['hours_days']}<br>{UI[lang]['hours_time']}</p>
+        <p class="tz">{TZ}</p></div>
+      <div class="juris-box plain reveal"><h3>{a['contact_h']}</h3>
+        <p><a href="tel:{PHONE_US_TEL}">{UI[lang]['us_label']}: {PHONE_US_DISPLAY}</a><br>
+        <a href="tel:{PHONE_MX_TEL}">{UI[lang]['mx_label']}: +52 {PHONE_MX_DISPLAY}</a><br>
+        <a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
     </div>
     <p style="margin-top:20px">{a['where_note']}</p>
   </div>

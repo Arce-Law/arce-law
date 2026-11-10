@@ -506,3 +506,10 @@ fieldset { border: 0; padding: 0; margin: 0 0 18px; min-width: 0; }
 }
 legend { padding: 0; }
 @media (max-width: 599px) { .hint.spacer { display: none; } }
+/* About: locations / hours / contact */
+@media (min-width: 1000px) { .juris-table.juris-4 { grid-template-columns: repeat(4, 1fr); } }
+.juris-box.plain h3::before { display: none; }
+.juris-box p { margin: 0; color: var(--muted); }
+.juris-box p.tz { margin-top: 10px; font-size: .9rem; }
+.juris-box a { text-decoration: none; display: inline-block; padding: 4px 0; white-space: nowrap; font-size: .95rem; }
+.juris-box a:hover { text-decoration: underline; }
