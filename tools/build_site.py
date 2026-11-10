@@ -122,6 +122,7 @@ def head(key, lang, extra_ld=None):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1D1A17">
 <link rel="icon" href="{a}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{a}apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,600;1,8..60,600&display=swap">
@@ -203,7 +204,7 @@ def header(key, lang):
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="{r(path_of('home', lang))}" aria-label="{FIRM}, {t['home'].lower()}">
-      <img src="{r('/assets/logo.jpg')}" alt="{FIRM}" height="44">
+      <img src="{r('/assets/logo-dark.png')}" alt="{FIRM}" width="95" height="44">
     </a>
     <nav id="primary-nav" class="primary-nav" aria-label="{t['menu']}">
       <ul class="nav-list">
@@ -238,7 +239,7 @@ def footer(key, lang):
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="footer-logo" href="{r(path_of('home', lang))}"><img src="{r('/assets/logo.jpg')}" alt="{FIRM}" height="40" loading="lazy"></a>
+        <a class="footer-logo" href="{r(path_of('home', lang))}"><img src="{r('/assets/logo-white.png')}" alt="{FIRM}" width="104" height="48" loading="lazy"></a>
         <p>{t['footer_blurb']}</p>
         <p><a href="{r(path_of('home', t['other']))}" hreflang="{t['other']}" lang="{t['other']}" data-set-lang="{t['other']}">{t['other_label']}</a></p>
         <!--
@@ -939,7 +940,7 @@ def page_root():
 <body>
 <main class="chooser">
   <div>
-    <img src="assets/logo.jpg" alt="{FIRM}" height="64">
+    <img src="assets/logo-dark.png" alt="{FIRM}" width="139" height="64">
     <h1 style="font-size:1.6rem">Choose your language · Elija su idioma</h1>
     <div class="btn-row">
       <a class="btn btn-primary" href="es/" hreflang="es" lang="es">Español</a>
@@ -968,7 +969,7 @@ def page_404():
 <body>
 <main class="chooser">
   <div>
-    <img src="/assets/logo.jpg" alt="{FIRM}" height="64">
+    <img src="/assets/logo-dark.png" alt="{FIRM}" width="139" height="64">
     <h1 style="font-size:1.8rem">Page not found</h1>
     <p lang="es-MX" style="font-family:var(--font-serif);font-size:1.4rem;margin-top:-8px">Página no encontrada</p>
     <p style="color:var(--muted)">The page you're looking for doesn't exist. <span lang="es-MX">La página que busca no existe.</span></p>

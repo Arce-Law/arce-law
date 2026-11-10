@@ -465,8 +465,8 @@ fieldset { border: 0; padding: 0; margin: 0 0 18px; min-width: 0; }
 .site-footer a:hover { color: #fff; text-decoration: underline; }
 .footer-grid { display: grid; gap: 36px; }
 @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.3fr 1fr 1fr 1.2fr; } }
-.footer-logo { background: #fff; display: inline-block; padding: 8px 10px; border-radius: 8px; margin-bottom: 14px; }
-.footer-logo img { height: 40px; width: auto; }
+.footer-logo { display: inline-block; margin-bottom: 14px; }
+.footer-logo img { height: 48px; width: auto; }
 .site-footer h2 { font: 700 .78rem var(--font-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--brass); margin-bottom: 14px; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
 .site-footer li a { display: inline-block; padding: 6px 0; }
@@ -522,3 +522,4 @@ legend { padding: 0; }
 .member .bio-text p:last-child { margin-bottom: 0; }
 @media (min-width: 1000px) { .team-grid { grid-template-columns: repeat(2, 1fr); } .member { flex-direction: row; } .member img { width: 40%; flex: none; align-self: flex-start; aspect-ratio: 4 / 5; height: auto; } }
 .team-grid { align-items: start; }
+@media (min-width: 1024px) { .brand img { height: 54px; } }
