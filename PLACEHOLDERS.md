@@ -11,7 +11,6 @@ Edit values in `tools/content.py` (settings at the top) or `tools/build_site.py`
 | WhatsApp number | `15555550123` (fake) | Real number, digits only, with country code (e.g. `5213334084797` or `12062009513`) |
 | Formspree form ID | `YOUR_FORM_ID` | Create a form at formspree.io, set the notification email, paste the ID. The form shows a "not connected" message until you do |
 | Email | `arcelaw.mx.us@gmail.com` (current Gmail) | Change `EMAIL` to the domain address (e.g. `info@arce-law.com`) once that mailbox exists |
-| Time zone for hours | shown as a placeholder (header, footer, contact) | Replace the `TZ = ph("time zone")` line, e.g. `TZ = "(Pacific Time)"` / `"(hora del Centro de México)"` |
 | Site URL | `https://www.arce-law.com` | Confirm www vs. apex domain (must match the custom domain set in Settings → Pages at launch) |
 
 ## Content and credentials (do not publish unverified)

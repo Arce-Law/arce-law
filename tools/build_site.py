@@ -196,7 +196,7 @@ def header(key, lang):
         for k in PRACTICE_KEYS)
     return f"""<div class="utility">
   <div class="wrap">
-    <span class="hours">{icon("clock")}&nbsp;{t['hours_short']}&nbsp;{TZ}</span>
+    <span class="hours">{icon("clock")}&nbsp;{t['hours_short']}{'&nbsp;' + TZ if TZ else ''}</span>
     {tel_link("us", lang)}
     {tel_link("mx", lang)}
   </div>
@@ -274,7 +274,7 @@ def footer(key, lang):
           <li><a href="tel:{PHONE_US_TEL}">{t['us_label']} {PHONE_US_DISPLAY}</a></li>
           <li><a href="tel:{PHONE_MX_TEL}">{t['mx_label']} +52 {PHONE_MX_DISPLAY}</a></li>
           <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
-          <li style="padding-top:6px">{t['hours_days']}<br>{t['hours_time']} {TZ}</li>
+          <li style="padding-top:6px">{t['hours_days']}<br>{t['hours_time']}{' ' + TZ if TZ else ''}</li>
         </ul>
       </div>
     </div>
@@ -663,7 +663,7 @@ def page_about(lang):
       <div class="juris-box us reveal"><h3>{a['us_h']}</h3><ul>{li(a['us_list'])}</ul></div>
       <div class="juris-box plain reveal"><h3>{a['hours_h']}</h3>
         <p>{UI[lang]['hours_days']}<br>{UI[lang]['hours_time']}</p>
-        <p class="tz">{TZ}</p></div>
+        {'<p class="tz">' + TZ + '</p>' if TZ else ''}</div>
       <div class="juris-box plain reveal"><h3>{a['contact_h']}</h3>
         <p><a href="tel:{PHONE_US_TEL}">{UI[lang]['us_label']}: {PHONE_US_DISPLAY}</a><br>
         <a href="tel:{PHONE_MX_TEL}">{UI[lang]['mx_label']}: +52 {PHONE_MX_DISPLAY}</a><br>
@@ -883,7 +883,7 @@ def page_contact(lang):
           <dt>{t['hours_days']}</dt><dd>{t['hours_time']}</dd>
           <dt>{t['closed']}</dt><dd>{t['closed_v']}</dd>
         </dl>
-        <p style="margin:10px 0 0;font-size:.92rem">{TZ}</p>
+        {'<p style="margin:10px 0 0;font-size:.92rem">' + TZ + '</p>' if TZ else ''}
       </div>
       <div class="info-card">
         <h2>{c['email_h']}</h2>

@@ -26,7 +26,7 @@ def ph(text):
     return f'<mark class="ph">[CONFIRM WITH CLIENT: {text}]</mark>'
 
 
-TZ = ph("time zone")
+TZ = ""   # optional time-zone label shown after the hours, e.g. "(Pacific Time)" / "(hora del Pacífico)"
 
 # ---------------------------------------------------------------- page registry
 # key -> slug per language ("" = language home)
