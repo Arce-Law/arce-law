@@ -677,8 +677,7 @@ TEAM_MEMBERS = [
     },
     {
         "name": "Alejandra Gomez Arce",
-        "photo": None,
-        "placeholder": "team-alejandra-gomez-arce-800x1000-PLACEHOLDER.jpg",
+        "photo": "team-alejandra-gomez-arce-800x1000.jpg",
         "en": {
             "role": "Co-Founder / Attorney",
             "summary": "Co-founder of ARCE Law US and principal of ARCE Law Mexico. Attorney since 1984 in civil, family, commercial and criminal law.",
