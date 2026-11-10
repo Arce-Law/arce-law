@@ -12,7 +12,7 @@ Edit values in `tools/content.py` (settings at the top) or `tools/build_site.py`
 | Formspree form ID | `YOUR_FORM_ID` | Create a form at formspree.io, set the notification email, paste the ID. The form shows a "not connected" message until you do |
 | Email | `info@arce-law.com` | Confirm once the domain mailbox exists (it currently goes nowhere) |
 | Time zone for hours | shown as a placeholder (header, footer, contact) | Replace the `TZ = ph("time zone")` line, e.g. `TZ = "(Pacific Time)"` / `"(hora del Centro de México)"` |
-| Site URL | `https://www.arce-law.com` | Confirm www vs. apex domain (must match `CNAME`) |
+| Site URL | `https://www.arce-law.com` | Confirm www vs. apex domain (must match the custom domain set in Settings → Pages at launch) |
 
 ## Content and credentials (do not publish unverified)
 - **Home, credentials strip:** bar admissions and licenses (Mexican cédula profesional, U.S. state bar), memberships, years in practice

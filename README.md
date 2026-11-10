@@ -17,7 +17,7 @@ See **PLACEHOLDERS.md** for everything that still needs client confirmation.
 ## Deploy to GitHub Pages with a custom domain
 1. Push this folder to a GitHub repository (the site files must be at the repo root).
 2. In the repo, go to **Settings → Pages → Build and deployment**, set **Source: Deploy from a branch**, choose **`main` / `(root)`**, and save.
-3. **Custom domain:** the `CNAME` file already contains `www.arce-law.com`. In Settings → Pages, enter `www.arce-law.com` and save.
+3. **Custom domain (at launch):** while previewing, the site runs at its github.io address with no `CNAME` file. To go live, enter `www.arce-law.com` under Settings → Pages → Custom domain and save. GitHub adds the `CNAME` file for you (pull it before editing locally).
 4. **DNS** (at the domain registrar):
    - `CNAME` record: `www` → `<your-github-username>.github.io`
    - `A` records for the apex `arce-law.com`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (optional `AAAA`: `2606:50c0:8000::153`, `…8001::153`, `…8002::153`, `…8003::153`)
