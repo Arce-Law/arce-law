@@ -686,11 +686,11 @@ TEAM = {
     "en": {"eyebrow": "Our team", "h1": "Meet the people behind Arce Law",
            "lead": "A bilingual team serving clients in Mexico and the United States.",
            "role": "Role", "creds": "Education & credentials", "lic": "Bar / licensing", "langs": "Languages",
-           "alt": "Placeholder photo of team member", "note": "Team bios"},
+           "alt": "Photo coming soon", "note": "Team bios", "full": "Read full bio"},
     "es": {"eyebrow": "Nuestro equipo", "h1": "Conozca al equipo de Arce Law",
            "lead": "Un equipo bilingüe al servicio de clientes en México y Estados Unidos.",
            "role": "Cargo", "creds": "Formación y credenciales", "lic": "Cédula / licencia", "langs": "Idiomas",
-           "alt": "Fotografía provisional de integrante del equipo", "note": "Biografías"},
+           "alt": "Fotografía próximamente", "note": "Biografías", "full": "Leer biografía completa"},
 }
 
 
@@ -698,18 +698,32 @@ def page_team(lang):
     key = "team"
     tm = TEAM[lang]
     cards = []
-    for n in range(1, 5):
+    for m in TEAM_MEMBERS:
+        d = m[lang]
+        if m["photo"]:
+            img = f'<img src="{rel(key, "/assets/img/" + m["photo"])}" alt="{m["name"]}" width="800" height="1000" loading="lazy">'
+        else:
+            img = (f'<img src="{rel(key, "/assets/img/" + m["placeholder"])}" alt="{tm["alt"]}: {m["name"]}" '
+                   f'width="800" height="1000" loading="lazy">')
+        full = ""
+        if d.get("bio"):
+            paras = "".join(f"<p>{x}</p>" for x in d["bio"])
+            full = f'''
+          <details class="bio">
+            <summary>{tm['full']}<span class="visually-hidden">: {m['name']}</span></summary>
+            <div class="bio-text">{paras}</div>
+          </details>'''
         cards.append(f"""      <article class="member reveal">
-        <img src="{rel(key, f'/assets/img/team-member-{n}-portrait-800x1000-PLACEHOLDER.jpg')}" alt="{tm['alt']} {n}" width="800" height="1000" loading="lazy">
+        {img}
         <div class="member-body">
-          <h3>{ph(f'name, team member {n}')}</h3>
-          <p class="role">{ph('role / title')}</p>
+          <h3>{m['name']}</h3>
+          <p class="role">{d['role']}</p>
+          <p class="summary">{d['summary']}</p>
           <dl>
-            <div><dt>{tm['creds']}</dt><dd>{ph('law school, degree, year')}</dd></div>
-            <div><dt>{tm['lic']}</dt><dd>{ph('bar admission / cédula profesional no. / state(s) licensed, or "non-attorney staff"')}</dd></div>
-            <div><dt>{tm['langs']}</dt><dd>{ph('languages spoken')}</dd></div>
-          </dl>
-          <p style="margin:14px 0 0;font-size:.95rem">{ph('2–3 sentence bio')}</p>
+            <div><dt>{tm['creds']}</dt><dd>{d['education']}</dd></div>
+            <div><dt>{tm['lic']}</dt><dd>{d['licensing']}</dd></div>
+            <div><dt>{tm['langs']}</dt><dd>{d['languages']}</dd></div>
+          </dl>{full}
         </div>
       </article>""")
     body = f"""<main id="main">
@@ -723,7 +737,7 @@ def page_team(lang):
 </section>
 <section class="section" aria-label="{tm['note']}">
   <div class="wrap">
-    <!-- Duplicate or delete <article class="member"> blocks to match the real team size. -->
+    <!-- Team members are defined in TEAM_MEMBERS in tools/content.py -->
     <div class="team-grid">
 {chr(10).join(cards)}
     </div>

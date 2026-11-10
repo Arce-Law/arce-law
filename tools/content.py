@@ -631,3 +631,92 @@ PRACTICE = {
         },
     },
 }
+
+# ---------------------------------------------------------------- team
+# Source: old site (arce-law.com/home, /gilberto, /alejandra), lightly copyedited.
+# Facts are the firm's own published claims; ph() marks what still needs confirmation.
+TEAM_MEMBERS = [
+    {
+        "name": "Gilberto Arce",
+        "photo": "team-gilberto-arce-800x1000.jpg",
+        "en": {
+            "role": "Founder / Attorney",
+            "summary": "Founded ARCE Law in 2009. Former head of the immigration legal department at the Mexican Consulate, focused on immigration and on U.S. clients with legal matters in Mexico.",
+            "education": "Law degree, University of Guadalajara",
+            "licensing": "Admitted to the Washington State Bar Association (2008); member, American Bar Association "
+                         + ph("WSBA license type and number. The old bio calls him a 'Foreign Law Consultant', a limited license"),
+            "languages": ph("languages spoken"),
+            "bio": [
+                "Gilberto, a Foreign Law Consultant, founded ARCE Law in 2009 to provide new and unique legal services in immigration and international law. He specializes in navigating complex immigration issues and in representing U.S. companies and individuals who invest, do business or have pending legal matters in Mexico. He received his law degree from the University of Guadalajara. Before his assignment to the Mexican Consulate, he practiced criminal and civil law with a private firm in Mexico.",
+                "As a Consular Officer and Legal Advisor with domestic and international experience, Gilberto managed a variety of programs, including the Visa and Dual Citizenship Department, where he helped Mexican citizens apply for official government documents. As the Consulate's official liaison with the U.S. Department of Homeland Security, he worked closely with Immigration and Customs Enforcement on immigration and criminal matters. He also managed outreach programs, provided legal advice and consular assistance to Mexican citizens in immigration and criminal cases, and coordinated the safe repatriation of Mexican nationals and minors.",
+                "Gilberto spent seven of his eight years at the Consulate as head of its immigration legal department, where he handled approximately 100 cases a month involving Mexican national petitioners and detainees in immigration proceedings, working with both petitioners and assigned defense counsel.",
+                "Since 2007 he has also worked with various law firms as a consulting attorney in foreign and immigration law. In 2008, Gilberto was admitted to the Washington State Bar Association and became a member of the American Bar Association.",
+            ],
+        },
+        "es": {
+            "role": "Fundador / Abogado",
+            "summary": "Fundó ARCE Law en 2009. Fue titular del departamento jurídico migratorio del Consulado de México; se enfoca en inmigración y en clientes de EE. UU. con asuntos legales en México.",
+            "education": "Licenciatura en Derecho, Universidad de Guadalajara",
+            "licensing": "Admitido en la Barra de Abogados del Estado de Washington (2008); miembro de la American Bar Association "
+                         + ph("tipo y número de licencia WSBA. La biografía anterior dice 'Foreign Law Consultant', que es una licencia limitada"),
+            "languages": ph("idiomas"),
+            "bio": [
+                "Gilberto, consultor en derecho extranjero (Foreign Law Consultant), fundó ARCE Law en 2009 para ofrecer servicios legales nuevos y especializados en materia migratoria y de derecho internacional. Se especializa en resolver asuntos migratorios complejos y en representar a empresas y personas de Estados Unidos que invierten, hacen negocios o tienen asuntos legales pendientes en México. Es licenciado en Derecho por la Universidad de Guadalajara. Antes de incorporarse al Consulado de México, ejerció en materia penal y civil en un despacho privado en México.",
+                "Como funcionario consular y asesor jurídico, con experiencia nacional e internacional, Gilberto estuvo a cargo de diversos programas, entre ellos el Departamento de Visas y Doble Nacionalidad, donde apoyó a ciudadanos mexicanos en el trámite de documentos oficiales. Como enlace oficial entre el Consulado y el Departamento de Seguridad Nacional de Estados Unidos (DHS), colaboró de cerca con el Servicio de Inmigración y Control de Aduanas (ICE) en asuntos migratorios y penales. También coordinó programas de acercamiento con la comunidad, brindó asesoría legal y protección consular a mexicanos en casos migratorios y penales, y coordinó la repatriación segura de connacionales y menores.",
+                "Durante siete de sus ocho años en el Consulado encabezó el departamento jurídico de asuntos migratorios, donde atendía aproximadamente 100 casos al mes de peticionarios y detenidos mexicanos en procesos migratorios, en coordinación con los propios peticionarios y con sus abogados defensores.",
+                "Desde 2007 colabora con distintos despachos como abogado consultor en derecho extranjero y migratorio. En 2008 fue admitido en la Barra de Abogados del Estado de Washington y se incorporó a la American Bar Association.",
+            ],
+        },
+    },
+    {
+        "name": "Alejandra Gomez Arce",
+        "photo": None,
+        "placeholder": "team-alejandra-gomez-arce-800x1000-PLACEHOLDER.jpg",
+        "en": {
+            "role": "Co-Founder / Attorney",
+            "summary": "Co-founder of ARCE Law US and principal of ARCE Law Mexico. Attorney since 1984 in civil, family, commercial and criminal law.",
+            "education": "Law degree, University of Guadalajara (1976); degree in accounting, University of Guadalajara (1994)",
+            "licensing": "Attorney in Mexico since 1984; member, Jus Semper Loquitur of Jalisco, A.C. " + ph("cédula profesional number"),
+            "languages": ph("languages spoken"),
+            "bio": [
+                "Alejandra Gomez Arce is the co-founder of ARCE Law US and the principal of ARCE Law Mexico. An attorney since 1984, she has experience in civil, family, commercial and criminal law, and has dedicated her practice to helping people resolve their conflicts with passion and dedication.",
+                "Her career in law began in 1971 in the criminal department of the State Judicial Branch. She graduated from the University of Guadalajara School of Law in 1976 and, in 1994, also earned a degree in accounting from the University of Guadalajara School of Business.",
+                "She is an active member of the professional attorneys' association Jus Semper Loquitur of Jalisco, A.C. From 2007 to 2009 she was the principal of AMS Law Mexico.",
+            ],
+        },
+        "es": {
+            "role": "Cofundadora / Abogada",
+            "summary": "Cofundadora de ARCE Law US y titular de ARCE Law México. Abogada desde 1984 en materia civil, familiar, mercantil y penal.",
+            "education": "Licenciatura en Derecho, Universidad de Guadalajara (1976); Licenciatura en Contaduría, Universidad de Guadalajara (1994)",
+            "licensing": "Abogada en México desde 1984; miembro de Jus Semper Loquitur de Jalisco, A.C. " + ph("número de cédula profesional"),
+            "languages": ph("idiomas"),
+            "bio": [
+                "Alejandra Gomez Arce es cofundadora de ARCE Law US y titular de ARCE Law México. Abogada en ejercicio desde 1984, cuenta con experiencia en materia civil, familiar, mercantil y penal, y ha dedicado su práctica a ayudar a las personas a resolver sus conflictos con pasión y entrega.",
+                "Su trayectoria en el derecho comenzó en 1971 en el área penal del Poder Judicial del Estado. Se tituló de la Facultad de Derecho de la Universidad de Guadalajara en 1976 y, en 1994, obtuvo además la licenciatura en Contaduría por la misma universidad.",
+                "Es miembro activo de la asociación profesional de abogados Jus Semper Loquitur de Jalisco, A.C. De 2007 a 2009 fue titular de AMS Law México.",
+            ],
+        },
+    },
+    {
+        "name": "Ivan Bono",
+        "photo": None,
+        "placeholder": "team-ivan-bono-800x1000-PLACEHOLDER.jpg",
+        "en": {"role": "Consulting Attorney", "summary": ph("2–3 sentence bio"),
+               "education": ph("law school, degree, year"), "licensing": ph("cédula profesional / bar admission"),
+               "languages": ph("languages spoken")},
+        "es": {"role": "Abogado consultor", "summary": ph("biografía breve, 2–3 oraciones"),
+               "education": ph("universidad, título, año"), "licensing": ph("cédula profesional / licencia"),
+               "languages": ph("idiomas")},
+    },
+    {
+        "name": "Fernanda Zavala",
+        "photo": None,
+        "placeholder": "team-fernanda-zavala-800x1000-PLACEHOLDER.jpg",
+        "en": {"role": "Consulting Attorney", "summary": ph("2–3 sentence bio"),
+               "education": ph("law school, degree, year"), "licensing": ph("cédula profesional / bar admission"),
+               "languages": ph("languages spoken")},
+        "es": {"role": "Abogada consultora", "summary": ph("biografía breve, 2–3 oraciones"),
+               "education": ph("universidad, título, año"), "licensing": ph("cédula profesional / licencia"),
+               "languages": ph("idiomas")},
+    },
+]

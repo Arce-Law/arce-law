@@ -18,7 +18,11 @@ Edit values in `tools/content.py` (settings at the top) or `tools/build_site.py`
 - **Home, credentials strip:** bar admissions and licenses (Mexican cédula profesional, U.S. state bar), memberships, years in practice
 - **About:** firm history, founder story, office locations
 - **About, "Where we help":** exactly which matters are handled in which jurisdiction, and by whom
-- **Team (4 card slots):** photo, name, role, education, bar/licensing number or "non-attorney staff", languages, short bio. Add or remove `<article class="member">` blocks to match the real team
+- **Team** (`TEAM_MEMBERS` in `tools/content.py`). Names, roles and the two founders' bios come from the old site.
+  - **Gilberto Arce:** languages; WSBA license **type and number**. His old bio calls him a "Foreign Law Consultant" and also says he was "admitted to the Washington Bar". In Washington, a Foreign Law Consultant (APR 14) is a limited license to advise on the law of the foreign country (Mexico), **not** U.S. law. Check the WSBA lawyer directory. If he holds that limited license, the U.S. Immigration and Washington LLC pages need rethinking. Photo cropped from the old site; a proper headshot would be better.
+  - **Alejandra Gomez Arce:** cédula profesional number, languages, and a **headshot**. The old site's only photo of her is a family beach photo that includes a child, so I didn't use it.
+  - **Ivan Bono, Fernanda Zavala:** the old site has only name and title. Need bio, education, cédula/licensing, languages and photo.
+  - Copyedits to confirm: "Jus Sempen Loquitur" corrected to "Jus Semper Loquitur"; "defense council" corrected to "counsel"; the ABA described as a membership (the old text said "admitted").
 - **U.S. Immigration page:** the name and state bar admission of the licensed attorney (or DOJ-accredited representative) who handles immigration. **Important:** in the U.S. only licensed attorneys and accredited representatives may give immigration legal advice. Washington's Immigration Service Fraud Prevention Act (RCW 19.154) strictly limits what non-attorneys can offer. If no U.S.-licensed attorney is on the team, this page must be rewritten or removed.
 - **Washington LLC page:** who handles business formation and their Washington licensing
 - **Contact:** free-consultation terms (length, format, limits), plus office address(es) or remove that block
@@ -31,7 +35,7 @@ Edit values in `tools/content.py` (settings at the top) or `tools/build_site.py`
 | `../logo.jpg` | Header, footer and schema logo. **Currently a temporary text logo; drop the real one in** | ~height 88px+ for retina |
 | `home-hero-client-consultation-1200x900-PLACEHOLDER.jpg` | Home hero | 1200×900 (4:3) |
 | `about-office-or-founder-1200x800-PLACEHOLDER.jpg` | About page | 1200×800 (3:2) |
-| `team-member-{1-4}-portrait-800x1000-PLACEHOLDER.jpg` | Team headshots | 800×1000 (4:5) |
+| `team-{alejandra-gomez-arce,ivan-bono,fernanda-zavala}-800x1000-PLACEHOLDER.jpg` | Team headshots (then set `photo` in `TEAM_MEMBERS`) | 800×1000 (4:5) |
 | `og-share-image-1200x630-PLACEHOLDER.jpg` | Link previews (Facebook, WhatsApp, LinkedIn) | 1200×630 |
 
 Compress photos before uploading (e.g. squoosh.app, quality ~70, under ~150 KB each). If you rename a file, also update its alt text in `tools/build_site.py`.

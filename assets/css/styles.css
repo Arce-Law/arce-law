@@ -513,3 +513,12 @@ legend { padding: 0; }
 .juris-box p.tz { margin-top: 10px; font-size: .9rem; }
 .juris-box a { text-decoration: none; display: inline-block; padding: 4px 0; white-space: nowrap; font-size: .95rem; }
 .juris-box a:hover { text-decoration: underline; }
+/* Team: summary + expandable full bio */
+.member .summary { font-size: .97rem; color: var(--ink-2); margin-bottom: 16px; }
+.member .bio { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 12px; }
+.member .bio summary { cursor: pointer; font-weight: 600; color: var(--clay); min-height: 44px; display: flex; align-items: center; }
+.member .bio summary:hover { color: var(--clay-dark); }
+.member .bio-text { font-size: .95rem; color: var(--ink-2); }
+.member .bio-text p:last-child { margin-bottom: 0; }
+@media (min-width: 1000px) { .team-grid { grid-template-columns: repeat(2, 1fr); } .member { flex-direction: row; } .member img { width: 40%; flex: none; align-self: flex-start; aspect-ratio: 4 / 5; height: auto; } }
+.team-grid { align-items: start; }
