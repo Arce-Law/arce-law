@@ -49,6 +49,10 @@ WA_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="c
           '<path d="M16.6 14.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>')
 
 
+PAUSE_SVG = '<svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>'
+PLAY_SVG = '<svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>'
+
+
 def icon(name, cls=""):
     c = f' class="{cls}"' if cls else ""
     return (f'<svg{c} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" '
@@ -348,7 +352,11 @@ HOME = {
         "h1": "Legal help in Mexico and the U.S., <em>in your language</em>",
         "lead": "Do you live in the U.S. but have a property, a family matter or paperwork in Mexico? We take care of it for you, often without you needing to travel. We also help with U.S. immigration and Washington business formation.",
         "call": "Call now",
-        "img_alt": "Colorful papel picado banners strung between the towers of a historic stone church in Mexico",
+        "slides": [
+            ("home-hero-papel-picado-1200x900.jpg", "Colorful papel picado banners strung between the towers of a historic stone church in Mexico"),
+            ("home-hero-alejandra-beach-1200x900.jpg", "Alejandra Gomez Arce, co-founder of Arce Law, with her family on a beach in Mexico"),
+        ],
+        "sl_label": "Photo slideshow", "sl_pause": "Pause slideshow", "sl_play": "Play slideshow", "sl_show": "Show photo",
         "mx": "Mexico:", "us": "U.S.:",
         "svc_eyebrow": "Practice areas", "svc_h": "How we can help",
         "svc_p": "Matters in two countries, handled by one bilingual team.",
@@ -371,7 +379,11 @@ HOME = {
         "h1": "Asesoría legal en México y Estados Unidos, <em>en su idioma</em>",
         "lead": "¿Vive en Estados Unidos y tiene una propiedad, un asunto familiar o un trámite pendiente en México? Nosotros nos encargamos, muchas veces sin que usted tenga que viajar. También le ayudamos con inmigración en EE. UU. y con la apertura de empresas en Washington.",
         "call": "Llamar ahora",
-        "img_alt": "Papel picado de colores colgado entre las torres de una iglesia histórica de cantera en México",
+        "slides": [
+            ("home-hero-papel-picado-1200x900.jpg", "Papel picado de colores colgado entre las torres de una iglesia histórica de cantera en México"),
+            ("home-hero-alejandra-beach-1200x900.jpg", "Alejandra Gomez Arce, cofundadora de Arce Law, con su familia en una playa de México"),
+        ],
+        "sl_label": "Galería de fotos", "sl_pause": "Pausar galería", "sl_play": "Reproducir galería", "sl_show": "Ver foto",
         "mx": "México:", "us": "EE. UU.:",
         "svc_eyebrow": "Áreas de práctica", "svc_h": "¿En qué le podemos ayudar?",
         "svc_p": "Asuntos en dos países, atendidos por un mismo equipo bilingüe.",
@@ -397,6 +409,14 @@ def page_home(lang):
     key = "home"
     how = "\n".join(f"        <li class=\"reveal\"><h3>{a}</h3><p>{b}</p></li>" for a, b in h["how"])
     trust = "\n".join(f"""        <div class="trust-item reveal">{icon(i)}<h3>{a}</h3><p>{b}</p></div>""" for i, a, b in h["trust"])
+    n = len(h["slides"])
+    slides = "\n".join(
+        f'      <img class="slide{" is-active" if i == 0 else ""}" src="{rel(key, "/assets/img/" + f)}" alt="{alt}" width="1200" height="900"'
+        + (' fetchpriority="high"' if i == 0 else ' loading="lazy" aria-hidden="true"') + '>'
+        for i, (f, alt) in enumerate(h["slides"]))
+    dots = "\n".join(
+        f'        <button type="button" class="slide-dot" aria-label="{h["sl_show"]} {i + 1} / {n}"{" aria-current=\"true\"" if i == 0 else ""}></button>'
+        for i in range(n))
     body = f"""<main id="main">
 <section class="hero">
   <div class="wrap hero-grid">
@@ -413,8 +433,12 @@ def page_home(lang):
         <span class="us"><strong>{h['us']}</strong>&nbsp;Washington, Arizona</span>
       </div>
     </div>
-    <div class="hero-media">
-      <img src="{rel(key, '/assets/img/home-hero-papel-picado-1200x900.jpg')}" alt="{h['img_alt']}" width="1200" height="900" fetchpriority="high">
+    <div class="hero-media hero-slides" role="region" aria-roledescription="carousel" aria-label="{h['sl_label']}" data-pause="{h['sl_pause']}" data-play="{h['sl_play']}">
+{slides}
+      <div class="slide-controls">
+        <button type="button" class="slide-toggle" aria-label="{h['sl_pause']}">{PAUSE_SVG}{PLAY_SVG}</button>
+{dots}
+      </div>
     </div>
   </div>
 </section>

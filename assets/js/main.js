@@ -70,6 +70,36 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
+  /* Home hero slideshow: crossfade, pause button, dots; pauses on hover/focus; no autoplay with reduced motion */
+  var show = document.querySelector(".hero-slides");
+  if (show) {
+    var slides = show.querySelectorAll(".slide");
+    var dots = show.querySelectorAll(".slide-dot");
+    var toggle = show.querySelector(".slide-toggle");
+    var cur = 0, timer = null, hover = false;
+    var userPaused = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function go(n) {
+      slides[cur].classList.remove("is-active"); slides[cur].setAttribute("aria-hidden", "true");
+      dots[cur].removeAttribute("aria-current");
+      cur = (n + slides.length) % slides.length;
+      slides[cur].classList.add("is-active"); slides[cur].removeAttribute("aria-hidden");
+      dots[cur].setAttribute("aria-current", "true");
+    }
+    function sync() {
+      var running = !userPaused && !hover;
+      clearInterval(timer); timer = running ? setInterval(function () { go(cur + 1); }, 6000) : null;
+      show.classList.toggle("is-paused", userPaused);
+      toggle.setAttribute("aria-label", show.getAttribute(userPaused ? "data-play" : "data-pause"));
+    }
+    toggle.addEventListener("click", function () { userPaused = !userPaused; sync(); });
+    dots.forEach(function (d, i) { d.addEventListener("click", function () { go(i); sync(); }); });
+    show.addEventListener("mouseenter", function () { hover = true; sync(); });
+    show.addEventListener("mouseleave", function () { hover = false; sync(); });
+    show.addEventListener("focusin", function () { hover = true; sync(); });
+    show.addEventListener("focusout", function () { hover = false; sync(); });
+    if (slides.length > 1) sync();
+  }
+
   /* Contact form: submit to Formspree via fetch, fall back to normal POST */
   var form = document.getElementById("intake-form");
   if (form && window.fetch) {
