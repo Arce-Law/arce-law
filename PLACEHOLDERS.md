@@ -24,14 +24,13 @@ Edit values in `tools/content.py` (settings at the top) or `tools/build_site.py`
   - Copyedits to confirm: "Jus Sempen Loquitur" corrected to "Jus Semper Loquitur"; "defense council" corrected to "counsel"; the ABA described as a membership (the old text said "admitted").
 - **U.S. Immigration page:** the name and state bar admission of the licensed attorney (or DOJ-accredited representative) who handles immigration. **Important:** in the U.S. only licensed attorneys and accredited representatives may give immigration legal advice. Washington's Immigration Service Fraud Prevention Act (RCW 19.154) strictly limits what non-attorneys can offer. If no U.S.-licensed attorney is on the team, this page must be rewritten or removed.
 - **Washington LLC page:** who handles business formation and their Washington licensing
-- **Contact:** free-consultation terms (length, format, limits), plus office address(es) or remove that block
+- **Contact:** free-consultation terms (length, format, limits)
 - **Testimonials (home page, hidden):** only real, permission-granted reviews. Remove `hidden` from the section to show it. Check bar advertising rules first
 - **Wording check:** the copy uses "lawyer/abogado" (for SEO terms like "abogado en Jalisco") and "attorney-client relationship." Confirm this is accurate for the firm in each country.
 
 ## Images (`assets/img/`, replace with the same filename or update the references)
 | File | Use | Size |
 |---|---|---|
-| `about-office-or-founder-1200x800-PLACEHOLDER.jpg` | About page | 1200×800 (3:2) |
 | `team-{ivan-bono,fernanda-zavala}-800x1000-PLACEHOLDER.jpg` | Team headshots (then set `photo` in `TEAM_MEMBERS`) | 800×1000 (4:5) |
 
 The home hero (`home-hero-papel-picado-1200x900.jpg`) is the client's own photo.
@@ -39,7 +38,7 @@ The home hero (`home-hero-papel-picado-1200x900.jpg`) is the client's own photo.
 Compress photos before uploading (e.g. squoosh.app, quality ~70, under ~150 KB each). If you rename a file, also update its alt text in `tools/build_site.py`.
 
 ## Structured data / SEO
-- Add the office `address` to the `LegalService` schema in `org_schema()` (`tools/build_site.py`) once confirmed. Also create or claim **Google Business Profile** listings for both offices; for local search ("abogado en Jalisco") that matters more than anything on the site.
+- Create or claim a **Google Business Profile** for the firm; for local search ("abogado en Jalisco") that matters more than anything on the site.
 - Social links: a commented-out block is in the footer (`footer()` in `build_site.py`). Uncomment it when real URLs exist.
 
 ## Recommended additions

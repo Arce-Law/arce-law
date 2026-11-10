@@ -168,7 +168,6 @@ def org_schema(lang):
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "opens": "08:30", "closes": "17:00"}],
         "knowsAbout": [PRACTICE[k][lang]["name"] for k in PRACTICE_KEYS],
-        # "address": {...}  -> add once the client confirms office address(es). See PLACEHOLDERS.md
     }
 
 
@@ -579,7 +578,6 @@ ABOUT = {
         "lead": "Arce Law helps individuals, families and businesses with legal matters in Mexico and the U.S., in English or Spanish, wherever they live.",
         "story_h": "Our story",
         "story": HISTORY["en"]["paras"][:2],
-        "img_alt": "Placeholder: the Arce Law office or the founding attorney",
         "values_h": "How we work",
         "values": [
             ("Clarity", "We explain the law and the process in plain language so you can make informed decisions."),
@@ -599,7 +597,6 @@ ABOUT = {
         "lead": "Arce Law ayuda a personas, familias y empresas con asuntos legales en México y Estados Unidos, en español o en inglés, vivan donde vivan.",
         "story_h": "Nuestra historia",
         "story": HISTORY["es"]["paras"][:2],
-        "img_alt": "Imagen provisional: la oficina de Arce Law o el abogado fundador",
         "values_h": "Cómo trabajamos",
         "values": [
             ("Claridad", "Le explicamos la ley y el proceso con palabras sencillas para que tome decisiones informadas."),
@@ -634,14 +631,11 @@ def page_about(lang):
 </section>
 
 <section class="section" aria-labelledby="story-title">
-  <div class="wrap split">
+  <div class="wrap narrow">
     <div class="prose reveal">
       <h2 id="story-title">{a['story_h']}</h2>
 {story}
       <p><a href="{rel(key, path_of('history', lang))}">{HISTORY[lang]['read_more']} →</a><br><a href="{rel(key, path_of('team', lang))}">{a['team_link']} →</a></p>
-    </div>
-    <div class="about-media reveal">
-      <img src="{rel(key, '/assets/img/about-office-or-founder-1200x800-PLACEHOLDER.jpg')}" alt="{a['img_alt']}" width="1200" height="800" loading="lazy">
     </div>
   </div>
 </section>
@@ -759,8 +753,7 @@ CONTACT = {
         "consent": "I understand that sending this form does not create an attorney-client relationship and that I should not include confidential information.",
         "send": "Send request", "req": "required",
         "call_h": "Call us", "wa_h": "WhatsApp", "wa_btn": "Message us on WhatsApp",
-        "hours_h": "Office hours", "email_h": "Email",
-        "office_h": "Office", "office": ph("office address(es) in the U.S. and/or Mexico, or remove this block if the firm is remote-only"),
+        "hours_h": "Hours", "email_h": "Email",
         "free_note": ph("terms of the free consultation (length, phone/video/in person, any limits)"),
         "subject": "New consultation request (EN) – arce-law.com",
     },
@@ -777,7 +770,6 @@ CONTACT = {
         "send": "Enviar solicitud", "req": "obligatorio",
         "call_h": "Llámenos", "wa_h": "WhatsApp", "wa_btn": "Escríbanos por WhatsApp",
         "hours_h": "Horario de atención", "email_h": "Correo",
-        "office_h": "Oficina", "office": ph("domicilio(s) de oficina en EE. UU. y/o México, o eliminar este bloque si el despacho es solo remoto"),
         "free_note": ph("condiciones de la consulta gratuita (duración, por teléfono/video/presencial, límites)"),
         "subject": "Nueva solicitud de consulta (ES) – arce-law.com",
     },
@@ -888,10 +880,6 @@ def page_contact(lang):
       <div class="info-card">
         <h2>{c['email_h']}</h2>
         <p style="margin:0"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
-      </div>
-      <div class="info-card">
-        <h2>{c['office_h']}</h2>
-        <p style="margin:0">{c['office']}</p>
       </div>
     </aside>
   </div>
