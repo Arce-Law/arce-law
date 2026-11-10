@@ -365,9 +365,6 @@ HOME = {
             ("device", "Help from a distance", "Phone, WhatsApp, video calls and email, so you can handle matters in Mexico from the U.S."),
             ("clipboard", "Clear next steps", "You'll always know what's happening, what comes next and what we need from you."),
         ],
-        "cred_label": "Licensing and credentials:",
-        "cred": ph("bar admissions / licenses for Mexico (cédula profesional) and the U.S. state bar(s), professional memberships, years in practice. Do not publish until verified."),
-        "testi_h": "What our clients say",
     },
     "es": {
         "eyebrow": "México · Estados Unidos",
@@ -391,9 +388,6 @@ HOME = {
             ("device", "Atención a distancia", "Teléfono, WhatsApp, videollamada y correo, para resolver sus asuntos en México desde Estados Unidos."),
             ("clipboard", "Pasos claros", "Siempre sabrá qué está pasando, qué sigue y qué necesitamos de usted."),
         ],
-        "cred_label": "Cédulas y credenciales:",
-        "cred": ph("cédula(s) profesional(es) en México, licencia(s) de barra estatal en EE. UU., membresías profesionales y años de experiencia. No publicar sin verificar."),
-        "testi_h": "Lo que dicen nuestros clientes",
     },
 }
 
@@ -403,10 +397,6 @@ def page_home(lang):
     key = "home"
     how = "\n".join(f"        <li class=\"reveal\"><h3>{a}</h3><p>{b}</p></li>" for a, b in h["how"])
     trust = "\n".join(f"""        <div class="trust-item reveal">{icon(i)}<h3>{a}</h3><p>{b}</p></div>""" for i, a, b in h["trust"])
-    testi = "\n".join(f"""        <figure class="quote">
-          <blockquote><p>{ph(f'testimonial {n}: exact words from a real client, with written permission')}</p></blockquote>
-          <figcaption>{ph('client first name / initial, city, service')}</figcaption>
-        </figure>""" for n in (1, 2, 3))
     body = f"""<main id="main">
 <section class="hero">
   <div class="wrap hero-grid">
@@ -463,23 +453,9 @@ def page_home(lang):
     <div class="trust-grid">
 {trust}
     </div>
-    <p class="credentials"><strong>{h['cred_label']}</strong> {h['cred']}</p>
   </div>
 </section>
 
-<!--
-  TESTIMONIALS: hidden until the client provides real, permission-granted reviews.
-  To show: remove the `hidden` attribute below and replace the placeholders.
-  Check bar advertising rules (e.g. WA RPC 7.1) before publishing testimonials.
--->
-<section class="section section-sand testimonials" aria-labelledby="testi-title" hidden>
-  <div class="wrap">
-    <div class="section-head"><h2 id="testi-title">{h['testi_h']}</h2></div>
-    <div class="quote-grid">
-{testi}
-    </div>
-  </div>
-</section>
 
 {cta_band(key, lang)}
 </main>
@@ -501,12 +477,9 @@ def page_practice(key, lang):
     related = "\n".join(f'      <li><a href="{rel(key, path_of(k, lang))}">{PRACTICE[k][lang]["name"]}</a></li>'
                         for k in PRACTICE_KEYS if k != key)
     extra_note = ""
-    if key == "immigration":
-        extra_note = f"""
-        <div class="callout"><p><strong>{'Who handles immigration matters:' if lang == 'en' else 'Quién atiende los asuntos migratorios:'}</strong> {ph('name and U.S. state bar admission of the licensed attorney (or DOJ-accredited representative) responsible for immigration cases')}</p></div>"""
     if key == "llc":
         extra_note = f"""
-        <div class="callout"><p>{'Government filing fees are set by the state and federal agencies and change from time to time. We will confirm current fees before filing.' if lang == 'en' else 'Las cuotas de registro las fijan las dependencias estatales y federales y cambian de vez en cuando. Le confirmamos las cuotas vigentes antes de presentar.'} {ph('who handles WA business formation & their WA licensing')}</p></div>"""
+        <div class="callout"><p>{'Government filing fees are set by the state and federal agencies and change from time to time. We will confirm current fees before filing.' if lang == 'en' else 'Las cuotas de registro las fijan las dependencias estatales y federales y cambian de vez en cuando. Le confirmamos las cuotas vigentes antes de presentar.'}</p></div>"""
     icls = "page-hero-icon"
     body = f"""<main id="main">
 <section class="page-hero">
@@ -589,7 +562,6 @@ ABOUT = {
         "mx_h": "Mexico", "us_h": "United States",
         "mx_list": ["Jalisco", "Michoacán", "Colima"],
         "us_list": ["Washington State", "Arizona"],
-        "where_note": ph("confirm exactly which matters are handled in each jurisdiction and by whom (licensed attorney, notary, or partner firm)."),
         "team_link": "Meet the team",
     },
     "es": {
@@ -608,7 +580,6 @@ ABOUT = {
         "mx_h": "México", "us_h": "Estados Unidos",
         "mx_list": ["Jalisco", "Michoacán", "Colima"],
         "us_list": ["Estado de Washington", "Arizona"],
-        "where_note": ph("confirmar exactamente qué asuntos se atienden en cada jurisdicción y por quién (abogado con licencia, notario o despacho aliado)."),
         "team_link": "Conozca al equipo",
     },
 }
@@ -663,7 +634,6 @@ def page_about(lang):
         <a href="tel:{PHONE_MX_TEL}">{UI[lang]['mx_label']}: +52 {PHONE_MX_DISPLAY}</a><br>
         <a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
     </div>
-    <p style="margin-top:20px">{a['where_note']}</p>
   </div>
 </section>
 
@@ -704,16 +674,16 @@ def page_team(lang):
             <summary>{tm['full']}<span class="visually-hidden">: {m['name']}</span></summary>
             <div class="bio-text">{paras}</div>
           </details>'''
+        summary = f'<p class="summary">{d["summary"]}</p>' if d.get("summary") else ""
+        rows = "".join(f"\n            <div><dt>{lbl}</dt><dd>{d[f]}</dd></div>"
+                       for lbl, f in ((tm["creds"], "education"), (tm["lic"], "licensing"), (tm["langs"], "languages")) if d.get(f))
         cards.append(f"""      <article class="member reveal">
         {img}
         <div class="member-body">
           <h3>{m['name']}</h3>
           <p class="role">{d['role']}</p>
-          <p class="summary">{d['summary']}</p>
-          <dl>
-            <div><dt>{tm['creds']}</dt><dd>{d['education']}</dd></div>
-            <div><dt>{tm['lic']}</dt><dd>{d['licensing']}</dd></div>
-            <div><dt>{tm['langs']}</dt><dd>{d['languages']}</dd></div>
+          {summary}
+          <dl>{rows}
           </dl>{full}
         </div>
       </article>""")
@@ -754,7 +724,6 @@ CONTACT = {
         "send": "Send request", "req": "required",
         "call_h": "Call us", "wa_h": "WhatsApp", "wa_btn": "Message us on WhatsApp",
         "hours_h": "Hours", "email_h": "Email",
-        "free_note": ph("terms of the free consultation (length, phone/video/in person, any limits)"),
         "subject": "New consultation request (EN) – arce-law.com",
     },
     "es": {
@@ -770,7 +739,6 @@ CONTACT = {
         "send": "Enviar solicitud", "req": "obligatorio",
         "call_h": "Llámenos", "wa_h": "WhatsApp", "wa_btn": "Escríbanos por WhatsApp",
         "hours_h": "Horario de atención", "email_h": "Correo",
-        "free_note": ph("condiciones de la consulta gratuita (duración, por teléfono/video/presencial, límites)"),
         "subject": "Nueva solicitud de consulta (ES) – arce-law.com",
     },
 }
@@ -801,7 +769,6 @@ def page_contact(lang):
   <div class="wrap contact-grid">
     <div class="form-card">
       <h2 style="font-size:1.5rem">{c['form_h']}</h2>
-      <p style="color:var(--muted);font-size:.95rem">{c['free_note']}</p>
       <!-- Formspree: replace YOUR_FORM_ID in tools/content.py (FORMSPREE_ID) or directly in this action URL. -->
       <form id="intake-form" action="https://formspree.io/f/{FORMSPREE_ID}" method="POST" novalidate>
         <input type="hidden" name="_subject" value="{c['subject']}">

@@ -650,8 +650,7 @@ TEAM_MEMBERS = [
             "role": "Founder / Attorney",
             "summary": "Founded ARCE Law in 2009. Former head of the immigration legal department at the Mexican Consulate, focused on immigration and on U.S. clients with legal matters in Mexico.",
             "education": "Law degree, University of Guadalajara",
-            "licensing": "Admitted to the Washington State Bar Association (2008); member, American Bar Association "
-                         + ph("WSBA license type and number. The old bio calls him a 'Foreign Law Consultant', a limited license"),
+            "licensing": "Admitted to the Washington State Bar Association (2008); member, American Bar Association ",
             "languages": "English, Spanish",
             "bio": [
                 "Gilberto, a Foreign Law Consultant, founded ARCE Law in 2009 to provide new and unique legal services in immigration and international law. He specializes in navigating complex immigration issues and in representing U.S. companies and individuals who invest, do business or have pending legal matters in Mexico. He received his law degree from the University of Guadalajara. Before his assignment to the Mexican Consulate, he practiced criminal and civil law with a private firm in Mexico.",
@@ -664,8 +663,7 @@ TEAM_MEMBERS = [
             "role": "Fundador / Abogado",
             "summary": "Fundó ARCE Law en 2009. Fue titular del departamento jurídico migratorio del Consulado de México; se enfoca en inmigración y en clientes de EE. UU. con asuntos legales en México.",
             "education": "Licenciatura en Derecho, Universidad de Guadalajara",
-            "licensing": "Admitido en la Barra de Abogados del Estado de Washington (2008); miembro de la American Bar Association "
-                         + ph("tipo y número de licencia WSBA. La biografía anterior dice 'Foreign Law Consultant', que es una licencia limitada"),
+            "licensing": "Admitido en la Barra de Abogados del Estado de Washington (2008); miembro de la American Bar Association ",
             "languages": "Español, inglés",
             "bio": [
                 "Gilberto, consultor en derecho extranjero (Foreign Law Consultant), fundó ARCE Law en 2009 para ofrecer servicios legales nuevos y especializados en materia migratoria y de derecho internacional. Se especializa en resolver asuntos migratorios complejos y en representar a empresas y personas de Estados Unidos que invierten, hacen negocios o tienen asuntos legales pendientes en México. Es licenciado en Derecho por la Universidad de Guadalajara. Antes de incorporarse al Consulado de México, ejerció en materia penal y civil en un despacho privado en México.",
@@ -682,7 +680,7 @@ TEAM_MEMBERS = [
             "role": "Co-Founder / Attorney",
             "summary": "Co-founder of ARCE Law US and principal of ARCE Law Mexico. Attorney since 1984 in civil, family, commercial and criminal law.",
             "education": "Law degree, University of Guadalajara (1976); degree in accounting, University of Guadalajara (1994)",
-            "licensing": "Attorney in Mexico since 1984; member, Jus Semper Loquitur of Jalisco, A.C. " + ph("cédula profesional number"),
+            "licensing": "Attorney in Mexico since 1984; member, Jus Semper Loquitur of Jalisco, A.C.",
             "languages": "English, Spanish",
             "bio": [
                 "Alejandra Gomez Arce is the co-founder of ARCE Law US and the principal of ARCE Law Mexico. An attorney since 1984, she has experience in civil, family, commercial and criminal law, and has dedicated her practice to helping people resolve their conflicts with passion and dedication.",
@@ -694,7 +692,7 @@ TEAM_MEMBERS = [
             "role": "Cofundadora / Abogada",
             "summary": "Cofundadora de ARCE Law US y titular de ARCE Law México. Abogada desde 1984 en materia civil, familiar, mercantil y penal.",
             "education": "Licenciatura en Derecho, Universidad de Guadalajara (1976); Licenciatura en Contaduría, Universidad de Guadalajara (1994)",
-            "licensing": "Abogada en México desde 1984; miembro de Jus Semper Loquitur de Jalisco, A.C. " + ph("número de cédula profesional"),
+            "licensing": "Abogada en México desde 1984; miembro de Jus Semper Loquitur de Jalisco, A.C.",
             "languages": "Español, inglés",
             "bio": [
                 "Alejandra Gomez Arce es cofundadora de ARCE Law US y titular de ARCE Law México. Abogada en ejercicio desde 1984, cuenta con experiencia en materia civil, familiar, mercantil y penal, y ha dedicado su práctica a ayudar a las personas a resolver sus conflictos con pasión y entrega.",
@@ -707,22 +705,22 @@ TEAM_MEMBERS = [
         "name": "Ivan Bono",
         "photo": None,
         "placeholder": "team-ivan-bono-800x1000-PLACEHOLDER.jpg",
-        "en": {"role": "Consulting Attorney", "summary": ph("2–3 sentence bio"),
-               "education": ph("law school, degree, year"), "licensing": ph("cédula profesional / bar admission"),
+        "en": {"role": "Consulting Attorney", "summary": "",
+               "education": "", "licensing": "",
                "languages": "English, Spanish"},
-        "es": {"role": "Abogado consultor", "summary": ph("biografía breve, 2–3 oraciones"),
-               "education": ph("universidad, título, año"), "licensing": ph("cédula profesional / licencia"),
+        "es": {"role": "Abogado consultor", "summary": "",
+               "education": "", "licensing": "",
                "languages": "Español, inglés"},
     },
     {
         "name": "Fernanda Zavala",
         "photo": None,
         "placeholder": "team-fernanda-zavala-800x1000-PLACEHOLDER.jpg",
-        "en": {"role": "Consulting Attorney", "summary": ph("2–3 sentence bio"),
-               "education": ph("law school, degree, year"), "licensing": ph("cédula profesional / bar admission"),
+        "en": {"role": "Consulting Attorney", "summary": "",
+               "education": "", "licensing": "",
                "languages": "English, Spanish"},
-        "es": {"role": "Abogada consultora", "summary": ph("biografía breve, 2–3 oraciones"),
-               "education": ph("universidad, título, año"), "licensing": ph("cédula profesional / licencia"),
+        "es": {"role": "Abogada consultora", "summary": "",
+               "education": "", "licensing": "",
                "languages": "Español, inglés"},
     },
 ]
